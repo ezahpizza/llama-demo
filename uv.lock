@@ -398,6 +398,25 @@ wheels = [
 ]
 
 [[package]]
+name = "google-genai"
+version = "1.26.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "anyio" },
+    { name = "google-auth" },
+    { name = "httpx" },
+    { name = "pydantic" },
+    { name = "requests" },
+    { name = "tenacity" },
+    { name = "typing-extensions" },
+    { name = "websockets" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/4a/6e/d9618081990ad7c4907c93fcccacb13081e825ca818e9e18618f91050246/google_genai-1.26.0.tar.gz", hash = "sha256:d7b019ac98ca07888caa6121a953eb65db20f78370d8ae06aec29fb534534dc8", size = 218877, upload-time = "2025-07-16T21:51:46.989Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/50/7d/201894058552d5ed810930f9483bf6be8650e3d599efab180d0510d0eea1/google_genai-1.26.0-py3-none-any.whl", hash = "sha256:a050de052ee6e68654ba7cdb97028a576ad7108d0ecc9257c69bcc555498e9a2", size = 217693, upload-time = "2025-07-16T21:51:45.797Z" },
+]
+
+[[package]]
 name = "google-generativeai"
 version = "0.8.5"
 source = { registry = "https://pypi.org/simple" }
@@ -666,7 +685,10 @@ dependencies = [
     { name = "google-generativeai" },
     { name = "llama-index" },
     { name = "llama-index-embeddings-gemini" },
+    { name = "llama-index-embeddings-google-genai" },
     { name = "llama-index-llms-gemini" },
+    { name = "llama-index-llms-google-genai" },
+    { name = "llama-index-tools-tavily-research" },
     { name = "llama-index-vector-stores-pinecone" },
     { name = "llama-parse" },
     { name = "pillow" },
@@ -684,7 +706,10 @@ requires-dist = [
     { name = "google-generativeai", specifier = ">=0.8.5" },
     { name = "llama-index", specifier = ">=0.12.49" },
     { name = "llama-index-embeddings-gemini", specifier = ">=0.3.2" },
+    { name = "llama-index-embeddings-google-genai", specifier = ">=0.2.1" },
     { name = "llama-index-llms-gemini", specifier = ">=0.5.0" },
+    { name = "llama-index-llms-google-genai", specifier = ">=0.2.5" },
+    { name = "llama-index-tools-tavily-research", specifier = ">=0.3.0" },
     { name = "llama-index-vector-stores-pinecone", specifier = ">=0.6.0" },
     { name = "llama-parse", specifier = ">=0.6.49" },
     { name = "pillow", specifier = ">=10.4.0" },
@@ -798,6 +823,19 @@ wheels = [
 ]
 
 [[package]]
+name = "llama-index-embeddings-google-genai"
+version = "0.2.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "google-genai" },
+    { name = "llama-index-core" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/7a/da/9a5ef2856b79f5010707921885aa51352dc0156e11d03cdfa553f166368b/llama_index_embeddings_google_genai-0.2.1.tar.gz", hash = "sha256:be1eaf71166acd91ae526d27b46ebd66cd16ba34620a4b9721d566df6742f8db", size = 5773, upload-time = "2025-07-02T16:32:59.02Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/09/62/942c8ee760c0337473e48f3b1fe1c735abe51453ddc344ccbf3d1d36a87d/llama_index_embeddings_google_genai-0.2.1-py3-none-any.whl", hash = "sha256:aee3e7f91684cb1e4df3b53f659ab1c6a60591d46ad95643a9fd88158472470b", size = 5532, upload-time = "2025-07-02T16:32:57.891Z" },
+]
+
+[[package]]
 name = "llama-index-embeddings-openai"
 version = "0.3.1"
 source = { registry = "https://pypi.org/simple" }
@@ -848,6 +886,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/6e/00/188ea883762a5c39fbc07be74de73cfd9cc4235c48992fb340a4379cedb8/llama_index_llms_gemini-0.5.0.tar.gz", hash = "sha256:8d2910566ca9043847ffec142942db7fa9465c7e298ecbad5542cacc9515c3a9", size = 9109, upload-time = "2025-05-30T00:09:05.103Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ff/5c/cee95dc6442d91dbc7bb185c8dbc00fb3afea6e814bd20e8b4f323d89b1e/llama_index_llms_gemini-0.5.0-py3-none-any.whl", hash = "sha256:a5a031042b07c56699b6ae2980c92df53acfea19f4611af3cb559b46887f5bc3", size = 9479, upload-time = "2025-05-30T00:09:04.249Z" },
+]
+
+[[package]]
+name = "llama-index-llms-google-genai"
+version = "0.2.5"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "google-genai" },
+    { name = "llama-index-core" },
+    { name = "pillow" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/2c/ce/0be30bf12300ddeb7768d3c99dc20c1092e08c5bc40fb889f8db8b0ae27c/llama_index_llms_google_genai-0.2.5.tar.gz", hash = "sha256:17c2b84ca2299c1cb41d514b763c23b65104617fef3e991774cadadd37f128ad", size = 11325, upload-time = "2025-07-16T09:49:22.766Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8a/96/cc64aae80826254c95f9b5360ee7bc54d8939e58229a8db7e366cd36c4f4/llama_index_llms_google_genai-0.2.5-py3-none-any.whl", hash = "sha256:29cdc679f073cfbcd9098f51a678611b405638246660f18707849b4df4a02146", size = 11701, upload-time = "2025-07-16T09:49:21.97Z" },
 ]
 
 [[package]]
@@ -932,6 +984,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/35/30/4611821286f82ba7b5842295607baa876262db86f88b87d83595eed172bf/llama_index_readers_llama_parse-0.4.0.tar.gz", hash = "sha256:e99ec56f4f8546d7fda1a7c1ae26162fb9acb7ebcac343b5abdb4234b4644e0f", size = 2472, upload-time = "2024-11-18T00:00:08.893Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/68/4f/e30d4257fe9e4224f5612b77fe99aaceddae411b2e74ca30534491de3e6f/llama_index_readers_llama_parse-0.4.0-py3-none-any.whl", hash = "sha256:574e48386f28d2c86c3f961ca4a4906910312f3400dd0c53014465bfbc6b32bf", size = 2472, upload-time = "2024-11-18T00:00:07.293Z" },
+]
+
+[[package]]
+name = "llama-index-tools-tavily-research"
+version = "0.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "llama-index-core" },
+    { name = "tavily-python" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/4f/3b/fb5cf7d5fed4902829200af9b4b7cfce6676d9f8442cd542e2066944a59d/llama_index_tools_tavily_research-0.3.0.tar.gz", hash = "sha256:2b6fb6823684a63696f70fef01f13a6096068a48088f5fb95eba4919d7ca6b7f", size = 3085, upload-time = "2024-11-17T23:06:11.425Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f7/07/9aa94120bf066ecbd5819ad5fac340968d4352c324a4f0d37587f9d1bdae/llama_index_tools_tavily_research-0.3.0-py3-none-any.whl", hash = "sha256:0fb973d56e98b3d7289e7dbedf28e687b7ada8949e67dfca7bfb468bd4ea5dbd", size = 3338, upload-time = "2024-11-17T23:06:10.594Z" },
 ]
 
 [[package]]
@@ -1625,12 +1690,26 @@ wheels = [
 ]
 
 [[package]]
-name = "tenacity"
-version = "9.1.2"
+name = "tavily-python"
+version = "0.7.9"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/0a/d4/2b0cd0fe285e14b36db076e78c93766ff1d529d70408bd1d2a5a84f1d929/tenacity-9.1.2.tar.gz", hash = "sha256:1169d376c297e7de388d18b4481760d478b0e99a777cad3a9c86e556f4b697cb", size = 48036, upload-time = "2025-04-02T08:25:09.966Z" }
+dependencies = [
+    { name = "httpx" },
+    { name = "requests" },
+    { name = "tiktoken" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ad/c1/5956e9711313a1bcaa3b6462b378014998ce394bd7cd6eb43a975d430bc7/tavily_python-0.7.9.tar.gz", hash = "sha256:61aa13ca89e2e40d645042c8d27afc478b27846fb79bb21d4f683ed28f173dc7", size = 19173, upload-time = "2025-07-01T22:44:01.759Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e5/30/643397144bfbfec6f6ef821f36f33e57d35946c44a2352d3c9f0ae847619/tenacity-9.1.2-py3-none-any.whl", hash = "sha256:f77bf36710d8b73a50b2dd155c97b870017ad21afe6ab300326b0371b3b05138", size = 28248, upload-time = "2025-04-02T08:25:07.678Z" },
+    { url = "https://files.pythonhosted.org/packages/3a/b4/14305cbf1e82ee51c74b1e1906ee70f4a2e62719dc8a8614f1fa562af376/tavily_python-0.7.9-py3-none-any.whl", hash = "sha256:6d70ea86e2ccba061d0ea98c81922784a01c186960304d44436304f114f22372", size = 15666, upload-time = "2025-07-01T22:43:59.25Z" },
+]
+
+[[package]]
+name = "tenacity"
+version = "8.5.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/a3/4d/6a19536c50b849338fcbe9290d562b52cbdcf30d8963d3588a68a4107df1/tenacity-8.5.0.tar.gz", hash = "sha256:8bc6c0c8a09b31e6cad13c47afbed1a567518250a9a171418582ed8d9c20ca78", size = 47309, upload-time = "2024-07-05T07:25:31.836Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d2/3f/8ba87d9e287b9d385a02a7114ddcef61b26f86411e121c9003eb509a1773/tenacity-8.5.0-py3-none-any.whl", hash = "sha256:b594c2a5945830c267ce6b79a166228323ed52718f30302c1359836112346687", size = 28165, upload-time = "2024-07-05T07:25:29.591Z" },
 ]
 
 [[package]]

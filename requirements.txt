@@ -10,4 +10,8 @@ google-generativeai
 python-dotenv
 Pillow
 pytesseract
+llama-index-tools-tavily-research
+pydantic
+llama-index-llms-google-genai
+llama-index-embeddings-google-genai
 pydantic

@@ -11,7 +11,7 @@ import os
 from dataclasses import dataclass
 
 from llama_index.core.schema import Document
-from llama_parse import LlamaParse
+from llama_parse import LlamaParse # check this
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -43,7 +43,6 @@ class MultimodalDocumentProcessor:
             image.save(img_byte_arr, format='PNG')
             img_byte_arr = img_byte_arr.getvalue()
             
-            # Create detailed prompt for financial/economic document analysis
             prompt = f"""
             Analyze this image from a financial/economic document. Please provide:
             
@@ -225,13 +224,8 @@ def _extract_text_from_pdf(pdf_file: Path, parser: LlamaParse) -> List[Document]
 
     try:
         logger.info(f"Extracting text with LlamaParse: {pdf_file.name}")
-        # Use system_prompt instead of deprecated parsing_instruction
-        docs = parser.load_data(str(pdf_file), system_prompt=(
-            "Extract all content from this document including text, tables, charts, and graphs. "
-            "Pay special attention to numerical data, financial metrics, and economic indicators. "
-            "Preserve the structure and context of tables and charts. "
-            "If you encounter charts or graphs, describe them in detail including axis labels, data points, and trends."
-        ))
+
+        docs = parser.load_data(str(pdf_file))
         if docs and _is_meaningful_text(docs[0].text):
             return docs
     except Exception as e:
