@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+llama-index
+llama-index-llms-gemini
+llama-index-embeddings-gemini
+llama-index-vector-stores-pinecone
+llama-parse
+pinecone-client
+google-generativeai
+python-dotenv
+Pillow
+pytesseract
+pydantic
